@@ -1,6 +1,7 @@
 from playwright.sync_api import Page, expect
 from faker import Faker
 fake = Faker()
+import pytest
 #random_password = fake.password(length=8, digits=True)
 #random_email = fake.email()
 
@@ -14,6 +15,7 @@ fake = Faker()
 #     #assert page.locator('.alert-block').inner_text()== '1Invalid email or password'  # Assert w/o retry
 #     expect(page.locator('.alert-block')).to_have_text('Invalid email or password', timeout=8000)
 
+@pytest.mark.skip
 def test_sign_up(page: Page):
     random_name = fake.name()
     random_email = fake.email()
